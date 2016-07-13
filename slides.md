@@ -72,6 +72,11 @@ This talk is ...
   * I don't think anything involving Vim isn't...
 ]
 
+???
+
+Show and tell is scary.  I'm trying to show you the things that were the keys to
+my understanding, but that reveals to you how I learn, and that's scary.
+
 ---
 
 .left-column[
@@ -81,7 +86,7 @@ This talk is ...
 ### - My goal
 ]
 .right-column.padding[
-My goal for this talk is for you to feel equipped to look at someone else's .vimrc file, and learn something from it.
+My goal for this talk is for you to feel equipped to look at someone else's `.vimrc` file, and learn something from it.
 ]
 
 ---
@@ -112,7 +117,7 @@ My goal for this talk is for you to feel equipped to look at someone else's .vim
 ### - Keyboard shortcuts
 ]
 .right-column[
-You will find yourself using h, j, k, and l for navigation in the craziest places.
+You will find yourself using `h`, `j`, `k`, and `l` for navigation in the craziest places.
 
 * GMail
 * Feedly
@@ -133,9 +138,9 @@ Two basic modes
 * Normal (which never seems normal to new users)
 * Insert
 
-Press 'i' to go from Normal to Insert
+Press `i` to go from Normal to Insert
 
-Press 'esc' to go from Insert to Normal
+Press `<esc>` to go from Insert to Normal
 ]
 
 ---
@@ -255,7 +260,7 @@ set incsearch
 * Usage is `map [sequence of keys] [sequence of keys]`
 * When you press the sequence of keys on the left, Vim types the sequence on the right
 * You can use key modifiers like Alt, by putting it in angle brackets `<Alt-h>`
-* `nnoremap <A-h> :bp<cr>` maps Alt+h to type ":bp" followed by the enter key (carriage return)
+* `nnoremap <A-h> :bp<cr>` maps `<Alt+h>` to type `:bp` followed by the enter key (carriage return)
 ]
 
 ---
@@ -289,10 +294,10 @@ e.g.,
 * Prepend the character code for the mode to the map
 
 
-* i - Input mode
-* n - Normal mode
-* c - Command mode
-* v - Visual mode
+* `i` - Input mode
+* `n` - Normal mode
+* `c` - Command mode
+* `v` - Visual mode
 
 Type `:help map-modes` for more information
 ]
