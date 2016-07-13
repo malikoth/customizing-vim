@@ -85,9 +85,9 @@ my understanding, but that reveals to you how I learn, and that's scary.
 ### - What this is
 ### - My goal
 ]
-.right-column.padding[
+.right-column[.blank[
 My goal for this talk is for you to feel equipped to look at someone else's `.vimrc` file, and learn something from it.
-]
+]]
 
 ---
 
@@ -172,7 +172,7 @@ At least three more modes:
 ### - Commands
 ]
 .right-column[
-* `:w` for write
+* `:w` for write to save
 * `:q` to quit
 * `:e` for edit
 * `:h` for help
@@ -190,7 +190,7 @@ Just remember to be in normal mode first!
 ### - vimrc
 ]
 .right-column[
-* Default location is the root of your user folder, i.e., `~/.vimrc`
+* Default location is the root of your user folder, `~/.vimrc`
 * Since Vim 7.4, will also look for `~/.vim/vimrc`
 * See [Tom Vincent's](https://tlvince.com/vim-respect-xdg) blog for help making Vim conform to the XDG spec
 ]
@@ -275,8 +275,6 @@ set incsearch
 * We need a way to keep from stepping on the toes of other shortcuts
 * Non-recursive maps solve this problem
 * Prepend `nore` to a keyboard mapping to make it non-recursive
-
-e.g.,
 
 `noremap <leader>' <esc>:qa!<cr>`
 ]
@@ -376,7 +374,7 @@ You will be hard pressed to find an editor or IDE with more plugins than Vim.
 --
 
 .right-column[
-* [VimAwesome](http://vimawesome.com/) contains .green[12,975] Vim plugins at the time of this writing.
+* [VimAwesome](http://vimawesome.com/) contains .green[12,975] Vim plugins at the time of this writing
 ]
 
 ---
