@@ -36,9 +36,8 @@ Follow along at https://git.io/customizing-vim
 * Motivation
 * Vim concepts
 * Defaults
-* Setting keyboard shortcuts
-* Plugin management
-* Some common generic plugins
+* Keyboard shortcuts
+* Plugins
 ]
 
 ---
@@ -143,14 +142,34 @@ Press 'esc' to go from Insert to Normal
 .left-column[
 # Vim Concepts
 ### - Editor modes
-### - Commands
-### - vimrc
-### - 
+### - Advanced editor modes
 ]
 .right-column[
-* `:w` to save
+At least three more modes:
+
+* Visual mode for selecting text
+  * Press `v` to enter normal visual mode
+  * Press `<Shift-v>` to enter visual line mode
+  * Press `<Ctrl-v>` to enter visual column mode
+* Command mode for entering commands to Vim
+  * Press `:` to enter
+* Replace mode for writing over existing words
+  * Press `<Shift-R>` to enter
+]
+
+---
+
+.left-column[
+# Vim Concepts
+### - Editor modes
+### - Advanced editor modes
+### - Commands
+]
+.right-column[
+* `:w` for write
 * `:q` to quit
-* `:e` to edit a file
+* `:e` for edit
+* `:h` for help
 
 Just remember to be in normal mode first!
 ]
@@ -160,6 +179,7 @@ Just remember to be in normal mode first!
 .left-column[
 # Vim Concepts
 ### - Editor modes
+### - Advanced editor modes
 ### - Commands
 ### - vimrc
 ]
@@ -178,7 +198,167 @@ My vimrc contains:
 ---
 
 .left-column[
-# Sane defaults
+# Defaults
+### - General
+]
+.right-column[
+```vim
+" Turn off vi compatibility, use advanced vim-only features
+set nocompatible
+
+" Turn on syntax highlighting
+syntax enable
+
+" Set colors to use 256 color palette
+set t_Co=256
+
+" Use the system clipboard as the default copy register
+set clipboard=unnamed
+
+" Copy indentation level when creating a new line
+set autoindent
+
+" Try to put the indent level at the right place
+set smartindent
+
+" Keep vim files in the ~/.vim folder
+set viminfo='100,h,n~/.vim/viminfo
+```
+]
+
+---
+
+.left-column[
+# Defaults
+### - General
+### - Searching
+]
+.right-column[
+```vim
+" Case insensitive search
+set ignorecase
+
+" Unless there is mixed case, then make it case sensitive
+set smartcase
+
+" Highlight search terms instead of just moving the cursor
+set hlsearch
+
+" Highlight search terms as you type them
+set incsearch
+```
+]
+
+---
+
+.left-column[
+# Keyboard Shortcuts
+### - Map
+]
+.right-column[
+* `map` is used to map shortcuts to actions
+* Usage is `map [sequence of keys] [sequence of keys]`
+* When you press the sequence of keys on the left, Vim types the sequence on the right
+* You can use key modifiers like Alt, by putting it in angle brackets `<Alt-h>`
+* `nnoremap <A-h> :bp<cr>` maps Alt+h to type ":bp" followed by the enter key (carriage return)
+]
+
+---
+
+.left-column[
+# Keyboard Shortcuts
+### - Map
+### - Non-recursive mode
+]
+.right-column[
+* Vim already has a ton of keyboard shortcuts, and plugins all introduce their own
+* We need a way to keep from stepping on the toes of other shortcuts
+* Non-recursive maps solve this problem
+* Prepend `nore` to a keyboard mapping to make it non-recursive
+
+e.g.,
+
+`noremap <leader>' <esc>:qa!<cr>`
+]
+
+---
+
+.left-column[
+# Keyboard Shortcuts
+### - Map
+### - Non-recursive mode
+### - Mode filtering
+]
+.right-column[
+* Maps can optionally apply only to specific modes
+* Prepend the character code for the mode to the map
+
+
+* i - Input mode
+* n - Normal mode
+* c - Command mode
+* v - Visual mode
+]
+
+---
+
+.left-column[
+# Keyboard Shortcuts
+### - Map
+### - Non-recursive mode
+### - Mode filtering
+### - Leader
+]
+.right-column[
+* The "leader" key is just an alias to some other key, but you can change the alias
+* `<leader>` shows up all the time, particularly in shortcuts specific to plugins
+
+Set the leader:
+
+`let mapleader=","`
+
+Use leader in a shortcut:
+
+`noremap <leader>sn :set number!<cr>`
+]
+
+---
+
+.left-column[
+# Keyboard Shortcuts
+### - Map
+### - Non-recursive mode
+### - Mode filtering
+### - Leader
+### - Common shortcuts
+]
+.right-column[
+```vim
+" Set the leader to comma, it'll grow on you
+let mapleader=","
+
+" Set the sequence 'jk' to hit escape
+" This will make leaving input mode easier
+inoremap jk <esc>
+
+" This will save you when you discover you
+" don't have permission to save a file
+cnoremap w!! w !sudo tee % >/dev/null
+
+" These make moving around easier with wrapped lines
+nnoremap j gj
+nnoremap k gk
+
+" These allow you enter command mode without the shift key
+nnoremap ; :
+vnoremap ; :
+```
+]
+
+---
+
+.left-column[
+# Plugins
 ]
 .right-column[
 
