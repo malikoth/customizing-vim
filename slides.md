@@ -65,7 +65,8 @@ This talk is not ...
 .right-column[
 This talk is ...
 
-* An introduction to what's in your master configuration file
+* An introduction to what's in your configuration file
+* For people who want to become more proficient with Vim
 * Show and tell
 * Partially based on opinion
   * I don't think anything involving Vim isn't...
@@ -298,6 +299,8 @@ e.g.,
 * n - Normal mode
 * c - Command mode
 * v - Visual mode
+
+Type `:help map-modes` for more information
 ]
 
 ---
@@ -359,9 +362,109 @@ vnoremap ; :
 
 .left-column[
 # Plugins
+### - Who reads these anyways?
 ]
 .right-column[
+You will be hard pressed to find an editor or IDE with more plugins than Vim.
 
+* I count 190 plugins for Notepad++
+]
+--
+
+.right-column[
+* [Atom](atom.io/packages) has 4,539 packages
+]
+--
+
+.right-column[
+* [VimAwesome](http://vimawesome.com/) contains 12,975 Vim plugins at the time of this writing.
+]
+
+---
+
+.left-column[
+# Plugins
+### - Who reads these anyways?
+### - Plugin manager
+]
+.right-column[
+A plugin manager will make it simple to manage and load your Vim plugins.
+
+A few common managers include:
+
+* Pathogen
+* Vundle
+* Plug
+* VAM
+]
+
+---
+
+.left-column[
+# Plugins
+### - Who reads these anyways?
+### - Plugin manager
+### - Manager bootstrapping
+]
+.right-column[
+```vim
+" Vim Plug automatic installation
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fsLo ~/.vim/autoload/plug.vim \
+        --create-dirs https://raw.githubusercontent.com\
+        /junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+```
+]
+
+---
+
+.left-column[
+# Plugins
+### - Who reads these anyways?
+### - Plugin manager
+### - Manager bootstrapping
+### - Management
+]
+.right-column[
+```vim
+" Plugins
+call plug#begin('~/.vim/plugged')
+    " Color schemes
+    Plug 'vim-scripts/wombat256.vim'
+
+    " Core plugins
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'scrooloose/nerdtree'
+    Plug 'sjl/gundo.vim'
+    Plug 'easymotion/vim-easymotion'
+    Plug 'ConradIrwin/vim-bracketed-paste'
+
+    " Git
+    Plug 'tpope/vim-fugitive'
+    Plug 'airblade/vim-gitgutter'
+
+    " Language specific
+    Plug 'jmcantrell/vim-virtualenv', {'for': 'python'}
+    Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
+call plug#end()
+```
+]
+
+---
+
+.left-column[
+# Plugins
+### - Who reads these anyways?
+### - Plugin manager
+### - Manager bootstrapping
+### - Management
+### - Portability demo
+]
+.right-column[
+# And now a quick demonstration...
 ]
 
 ---
@@ -377,6 +480,8 @@ template: title
 .right-column[
 * This talk https://git.io/customizing-vim
 * RemarkJS Markdown based presentation framework http://remarkjs.com
+* [Steve Losh](http://stevelosh.com/blog/2010/09/coming-home-to-vim/) on Vim
+* Type `vimtutor` for an interactive training
 
 ## Please leave feedback!
 https://joind.in/talk/09b88

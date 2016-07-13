@@ -1,0 +1,10 @@
+from ubuntu
+
+run apt update
+run apt upgrade -y
+run apt install -y curl git vim
+
+run curl -Lo ~/.vim/vimrc --create-dirs git.io/malikoth-vimrc
+run vim +PlugInstall +qall
+
+entrypoint /bin/bash
