@@ -188,12 +188,6 @@ Just remember to be in normal mode first!
 * Default location is the root of your user folder, i.e., `~/.vimrc`
 * Since Vim 7.4, will also look for `~/.vim/vimrc`
 * See [Tom Vincent's](https://tlvince.com/vim-respect-xdg) blog for help making Vim conform to the XDG spec
-
-My vimrc contains:
-* Some configuration stuff
-* Tons of settings
-* Tons of custom keyboard shortcuts
-* Some functions
 ]
 
 ---
@@ -367,17 +361,17 @@ vnoremap ; :
 .right-column[
 You will be hard pressed to find an editor or IDE with more plugins than Vim.
 
-* I count 190 plugins for Notepad++
+* I count .red[190] plugins for Notepad++
 ]
 --
 
 .right-column[
-* [Atom](atom.io/packages) has 4,539 packages
+* [Atom](atom.io/packages) has .red[4,539] packages
 ]
 --
 
 .right-column[
-* [VimAwesome](http://vimawesome.com/) contains 12,975 Vim plugins at the time of this writing.
+* [VimAwesome](http://vimawesome.com/) contains .green[12,975] Vim plugins at the time of this writing.
 ]
 
 ---
@@ -481,7 +475,8 @@ template: title
 * This talk https://git.io/customizing-vim
 * RemarkJS Markdown based presentation framework http://remarkjs.com
 * [Steve Losh](http://stevelosh.com/blog/2010/09/coming-home-to-vim/) on Vim
-* Type `vimtutor` for an interactive training
+* [Learn Vimscript the Hard Way](http://learnvimscriptthehardway.stevelosh.com/)
+* Type `vimtutor` in your terminal for interactive training
 
 ## Please leave feedback!
 https://joind.in/talk/09b88
