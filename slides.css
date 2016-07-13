@@ -38,7 +38,7 @@ a, a > code {
     text-decoration: none;
 }
 code {
-    background: #e7e8e2;
+    background: #333;
     border-radius: 5px
 }
 .no-curves code {
