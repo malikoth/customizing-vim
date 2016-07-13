@@ -24,7 +24,7 @@ template: title
 ### Kyle Rich
 
 .footnote[
-Follow along at https://git.io/ ???
+Follow along at https://git.io/customizing-vim
 ]
 
 ---
@@ -38,7 +38,7 @@ template: title
 ## Resources
 ]
 .right-column[
-* This talk https://git.io/ ???
+* This talk https://git.io/customizing-vim
 * RemarkJS Markdown based presentation framework http://remarkjs.com
 
 ## Please leave feedback!
